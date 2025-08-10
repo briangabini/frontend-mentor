@@ -24,8 +24,9 @@
         z-index: -1;
       }
 
-      @media (min-width: 1024px) {
+      @media (min-width: 1440px) {
         body::before {
+          height: 320px;
           background-image: url('./assets/images/background-pattern-desktop.svg');
         }
       }
@@ -67,12 +68,12 @@
         <h1 class="text-4xl font-bold text-purple-950">FAQs</h1>
       </div>
 
-      <div id="faq-container" class="space-y-4"></div>
+      <div id="faq-container" class="space-y-6"></div>
     </div>
 
     <div class="attribution mt-8">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://briangabini.com">Brian Gabini</a>.
+      Coded by <a href="https://www.briangabini.com">Brian Gabini</a>.
     </div>
 
     <script>
@@ -98,8 +99,11 @@
         $(document).ready(function  () {
           const $faqContainer = $('#faq-container');
 
-          // 1. Generate and append all FAQ items from the data
           $.each(faqData, function  (index, item) {
+            if (index > 0 && index < faqData.length) {
+              $faqContainer.append(`<div class="h-px bg-purple-100 w-full"></div>`);
+            }
+
             const faqItemHtml = `
               <div class="faq-item">
                 <button class="faq-question flex items-center justify-between w-full text-left font-semibold text-lg text-purple-950 hover:text-purple-600 focus:outline-none">
@@ -107,7 +111,7 @@
                   <img src="./assets/images/icon-plus.svg" alt="plus icon" class="w-6 h-6">
                 </button>
                 <div class="faq-answer" style="display: none;">
-                  <p class="mt-2 text-purple-600">${item.answer}</p>
+                  <p class="mt-2 text-purple-600 py-4">${item.answer}</p>
                 </div>
               </div>
             `;
@@ -124,14 +128,13 @@
             const $this = $(this);
             const $answer = $this.next('.faq-answer');
 
-            // Close all other answers and reset their icons
             $('.faq-answer').not($answer).slideUp(200);
             $('.faq-question').not($this).find('img').attr('src', './assets/images/icon-plus.svg');
 
-            // Toggle the current answer and icon
-            $answer.slideToggle(200);
-            const newSrc = $answer.is(':visible') ? './assets/images/icon-plus.svg' : './assets/images/icon-minus.svg';
-            $this.find('img').attr('src', newSrc);
+            $answer.slideToggle(200, function() {
+              const newSrc = $answer.is(':visible') ? './assets/images/icon-minus.svg' : './assets/images/icon-plus.svg';
+              $this.find('img').attr('src', newSrc);
+            });
           });
         });
     </script>
