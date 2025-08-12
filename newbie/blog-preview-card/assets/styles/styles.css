@@ -1,0 +1,152 @@
+*, ::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+:root {
+    --color-yellow: hsl(47, 88%, 63%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-gray-500: hsl(0, 0%, 42%);
+    --color-gray-950: hsl(0, 0%, 7%);
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: italic;
+    font-weight: 100 900;
+    src: url('../fonts/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 100 900;
+    src: url('../fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/static/Figtree-SemiBold.ttf') format('truetype');
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Figtree', sans-serif;
+}
+
+body {
+    background-color: var(--color-yellow);
+}
+
+p {
+    font-size: 14px;
+    color: black;
+}
+
+.card {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    max-width: 324px;
+    border: 1px solid var(--color-gray-500);
+    gap: 12px;
+    box-shadow: 8px 8px 0 black;
+}
+
+.card-image-container {
+    margin-bottom: 8px;
+}
+
+.card-image {
+    border-radius: 8px;
+}
+
+.article-tag-container {
+    display: flex;
+    gap: 8px;
+}
+
+.article-tag {
+    background-color: var(--color-yellow);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.publish-date {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.article-title {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.article-title:hover {
+    color: var(--color-yellow);
+    cursor: pointer;
+}
+
+.article-description {
+    color: var(--color-gray-500);
+}
+
+.author-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.author-image {
+    border-radius: 50%;
+    width: 32px;
+}
+
+.author-name {
+    font-weight: 800;
+    font-size: 14px;
+}

@@ -1,0 +1,284 @@
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* VARIABLES */
+:root {
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+
+/* TYPOGRAPHY */
+/* Define the font-face for variable font */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Define the font-face for static fonts */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/static/Outfit-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YoungSerif';
+    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body {
+    background-color: var(--stone-100);
+    margin: 0;
+    height: auto;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+p {
+    color: var(--stone-600);
+}
+
+li > p {
+    position: relative;
+    left: 16px;
+}
+
+/* Mobile styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.styled-line {
+    border: none;
+    border-top: 1px solid var(--stone-150);
+}
+
+.image-container {
+    margin: -32px -32px 0 -32px; /* Negative margin to offset the container's padding */
+}
+
+.recipe-title {
+    font-family: 'YoungSerif', serif;
+    font-weight: 500;
+    line-height: 1.0;
+}
+
+.preparation-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    background-color: var(--rose-50);
+    border-radius: 8px;
+}
+
+.preparation-section > h3 {
+    color: var(--rose-800);
+}
+
+ul {
+    list-style-position: outside;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+ol {
+    list-style-position: outside;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+li::marker {
+    font-size: 0.75em;
+}
+
+.preparation-section li::marker {
+    color: var(--rose-800);
+}
+
+h2 {
+    font-family: 'YoungSerif', serif;
+    color: var(--brown-800);
+}
+
+.ingredients-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ingredients-section li::marker {
+    color: var(--brown-800);
+}
+
+.instructions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.instructions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.instructions-section li::marker {
+    color: var(--brown-800);
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nutrition-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid var(--stone-150);
+}
+
+th, td {
+    text-align: left;
+}
+
+th {
+    color: var(--stone-600);
+    font-weight: 400;
+    padding-left: 32px;
+}
+
+td {
+    font-weight: 700;
+    color: var(--brown-800);
+}
+
+/* Media queries for larger screens */
+@media (min-width: 600px) {
+    .container {
+        max-width: 700px;
+        margin: 96px auto;
+        border-radius: 8px;
+    }
+
+    .image-container {
+        margin: 0;
+    }
+
+    .hero-image {
+        border-radius: 8px;
+    }
+}
