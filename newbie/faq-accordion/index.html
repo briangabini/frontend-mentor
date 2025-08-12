@@ -7,7 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --breakpoint-mobile: 375px;
+        --breakpoint-desktop: 1440px;
+
+        --color-white: hsl(0, 100%, 100%);
+        --color-purple-100: hsl(275, 100%, 97%);
+        --color-purple-600: hsl(292, 16%, 49%);
+        --color-purple-950: hsl(292, 42%, 14%);
+
+        --font-family-sans: 'Work Sans', sans-serif;
+      }
+    </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>Frontend Mentor | FAQ accordion</title>
     <style>
@@ -42,27 +55,10 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'white': 'hsl(0, 100%, 100%)',
-              'purple-100': 'hsl(275, 100%, 97%)',
-              'purple-600': 'hsl(292, 16%, 49%)',
-              'purple-950': 'hsl(292, 42%, 14%)',
-            },
-            fontFamily: {
-              'sans': ['Work Sans', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
   </head>
-  <body class="flex flex-col items-center justify-center min-h-screen bg-purple-100">
+  <body class="flex flex-col px-6 items-center justify-center min-h-screen bg-purple-100">
 
-    <div class="w-full max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <div class="w-full max-w-[612px] mx-auto bg-white rounded-lg shadow-lg p-8">
       <div class="flex items-center mb-8">
         <img src="./assets/images/icon-star.svg" alt="star icon" class="w-8 h-8 mr-4">
         <h1 class="text-4xl font-bold text-purple-950">FAQs</h1>
