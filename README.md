@@ -21,7 +21,6 @@ Here you can find a list of all the challenges I've tackled, organized by diffic
 | Social Links Profile | [Live Demo](https://fe-mentor-social-links-profile.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/social-links-profile) | HTML, CSS |
 | Blog Preview Card | [Live Demo](https://fe-mentor-blog-prev-card.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/blog-preview-card) | HTML, CSS |
 | Faq Accordion | [Live Demo](https://brngbn-faq-accordion.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/faq-accordion) | HTML, CSS, Tailwind |
-| Faq Accordion | [Live Demo](https://brngbn-faq-accordion.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/faq-accordion) | HTML, CSS, Tailwind |
 | Product Preview Card Component | [Live Demo](https://brngbn-product-preview-card-component.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/product-preview-card-component) | HTML, CSS, Tailwind |
 
 
