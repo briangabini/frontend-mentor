@@ -23,6 +23,10 @@ Here you can find a list of all the challenges I've tackled, organized by diffic
 | Faq Accordion | [Live Demo](https://brngbn-faq-accordion.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/faq-accordion) | HTML, CSS, Tailwind |
 | Product Preview Card Component | [Live Demo](https://brngbn-product-preview-card-component.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/newbie/product-preview-card-component) | HTML, CSS, Tailwind |
 
+### Junior Challenges
+| Challenge Name | Live Demo | Source Code | Technologies |
+|---|---|---|---|
+| News Homepage | [Live Demo]() | [Source Code]() | HTML, CSS, Tailwind |
 
 ## Tech Stack
 - HTML5
