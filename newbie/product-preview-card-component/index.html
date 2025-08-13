@@ -25,16 +25,10 @@
         --color-white: hsl(-3, 0%, 100%);
         --color-green-500: hsl(158, 36%, 37%);
         --color-green-700: hsl(158, 42%, 18%);
-      }
 
-    @layer base {
-      .font-montserrat {
-        font-family: 'Montserrat', sans-serif;
+        --font-montserrat: 'Montserrat', sans-serif;
+        --font-fraunces: 'Fraunces', serif;
       }
-      .font-fraunces {
-        font-family: 'Fraunces', serif;
-      }
-    }
   </style>
   <style>
 
@@ -44,20 +38,20 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center bg-cream px-2 font-montserrat">
 
-  <main class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden max-w-[600px] mx-auto mt-8">
+  <main class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden max-w-[622px] mx-auto mt-8">
     <div class="md:w-1/2">
       <img src="./images/image-product-mobile.jpg" alt="Gabrielle Essence Eau De Parfum" class="w-full h-full object-cover md:hidden">
       <img src="./images/image-product-desktop.jpg" alt="Gabrielle Essence Eau De Parfum" class="w-full h-full object-cover hidden md:block">
     </div>
-    <div class="p-8 md:w-1/2 flex flex-col justify-between gap-4">
+    <div class="p-8 md:w-1/2 flex flex-col justify-between gap-4 md:gap-6">
       <p class="text-grey text-xs font-medium tracking-[4px] uppercase">Perfume</p>
-      <h1 class="font-fraunces font-bold text-black text-[28px] leading-6 leading-tight">Gabrielle Essence Eau De Parfum</h1>
+      <h1 class="font-fraunces font-bold text-black text-[28px]/8 md:text-[32px]">Gabrielle Essence Eau De Parfum</h1>
       <p class="text-grey text-sm/6">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
       <div class="flex items-center">
-        <span class="font-fraunces font-bold text-green-500 text-[28px] mr-4">$149.99</span>
+        <span class="font-fraunces font-bold text-green-500 text-[28px] md:text-[32px] mr-4">$149.99</span>
         <span class="text-xs text-grey line-through">$169.99</span>
       </div>
-      <button class="bg-green-500 font-bold text-white py-3 px-6 rounded-lg flex items-center justify-center hover:bg-green-700 transition-colors duration-300">
+      <button class="bg-green-500 text-sm font-bold text-white py-3 px-6 rounded-lg flex items-center justify-center hover:bg-green-700 transition-colors duration-300">
         <img src="./images/icon-cart.svg" alt="cart icon" class="mr-2">
         Add to Cart
       </button>
