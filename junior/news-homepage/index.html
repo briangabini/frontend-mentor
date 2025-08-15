@@ -34,13 +34,33 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class="font-inter text-body bg-off-white">
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
+  <div class="container mx-auto max-w-6xl p-4 md:p-8">
+    <!-- Header and Navigation -->
+
+    <header class="flex justify-between items-center mb-8">
+      <!-- Logo -->
+      <a href="#"><img src="./assets/images/logo.svg" alt="W. Logo" width="42px"></a>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="cursor-pointer">
+          <img src="./assets/images/icon-menu.svg" alt="Menu Icon" width="32px">
+        </button>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 text-dark-grayish-blue">
+        <a href="#" class="hover:text-soft-red">Home</a>
+        <a href="#" class="hover:text-soft-red">New</a>
+        <a href="#" class="hover:text-soft-red">Popular</a>
+        <a href="#" class="hover:text-soft-red">Trending</a>
+        <a href="#" class="hover:text-soft-red">Categories</a>
+      </nav>
+    </header>
+
+  </div>
 
   The Bright Future of Web 3.0?
 
