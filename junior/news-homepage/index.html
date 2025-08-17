@@ -36,12 +36,12 @@
 </head>
 <body class="font-inter text-body bg-off-white">
 
-  <div class="container mx-auto max-w-6xl p-4 md:p-8">
+  <div class="md:mx-[180px]  mt-4">
     <!-- Header and Navigation -->
-
     <header class="flex justify-between items-center mb-8">
       <!-- Logo -->
-      <a href="#"><img src="./assets/images/logo.svg" alt="W. Logo" width="42px"></a>
+      <a href="#" class="md:hidden"><img src="./assets/images/logo.svg" alt="W. Logo" width="42px"></a>
+      <a href="#" class="hidden md:block"><img src="./assets/images/logo.svg" alt="W. Logo" width="70px">
 
       <!-- Mobile Navigation -->
       <div class="md:hidden">
@@ -64,7 +64,7 @@
 
   <main>
     <!-- Main Content Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mx-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mx-4 md:mx-[180px]">
 
       <!-- Main Feature Article -->
       <div class="md:col-span-2">
@@ -92,30 +92,30 @@
 
       <!-- "New" Articles Sidebar -->
       <aside class="bg-very-dark-blue text-off-white p-6">
-        <h2 class="text-soft-orange text-4xl font-bold mb-2">New</h2>
+        <h2 class="text-soft-orange text-3xl md:text-4xl font-bold mb-2">New</h2>
 
-        <div class="space-y-6 divide-y divide-dark-grayish-blue">
-          <article class="pt-6">
+        <div class="divide-y divide-dark-grayish-blue">
+          <article class="py-8">
             <h3 class="font-bold text-xl mb-2 hover:text-soft-orange cursor-pointer">
               Hydrogen VS Electric Cars
             </h3>
-            <p class="text-grayish-blue">
+            <p class="text-grayish-blue text-[15px]">
               Will hydrogen-fueled cars ever catch up to EVs?
             </p>
           </article>
-          <article class="pt-6">
+          <article class="py-8">
             <h3 class="font-bold text-xl mb-2 hover:text-soft-orange cursor-pointer">
               The Downsides of AI Artistry
             </h3>
-            <p class="text-grayish-blue">
+            <p class="text-grayish-blue text-[15px]">
               What are the possible adverse effects of on-demand AI image generation?
             </p>
           </article>
-          <article class="pt-6">
+          <article class="py-8">
             <h3 class="font-bold text-xl mb-2 hover:text-soft-orange cursor-pointer">
               Is VC Funding Drying Up?
             </h3>
-            <p class="text-grayish-blue">
+            <p class="text-grayish-blue text-[15px]">
               Private funding by VC firms is down 50% YOY. We take a look at what that means.
             </p>
           </article>
@@ -137,9 +137,9 @@
   The Growth of Gaming
   How the pandemic has sparked fresh opportunities.
   
-  <div class="attribution">
+  <!--<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div>-->
 </body>
 </html>
