@@ -52,7 +52,7 @@
 </head>
 <body class="font-inter text-body bg-off-white">
 
-<div class="md:mx-[180px]  mt-4">
+<div class="md:mx-[180px] mt-8 mb-12 md:mt-[96px] md:mb-[120px] max-w-[1440px] mx-4">
     <!-- Header and Navigation -->
     <header class="flex justify-between items-center mb-8">
         <!-- Logo -->
@@ -65,92 +65,98 @@
            class="hidden md:block"><img
                 src="./assets/images/logo.svg"
                 alt="W. Logo"
-                width="70px">
+                width="70px"></a>
 
-            <!-- Mobile Navigation -->
-            <div class="md:hidden">
-                <button id="menu-btn"
-                        class="cursor-pointer">
-                    <img src="./assets/images/icon-menu.svg"
-                         alt="Menu Icon"
-                         width="32px">
-                </button>
-            </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden">
+            <button id="menu-btn"
+                    class="cursor-pointer">
+                <img src="./assets/images/icon-menu.svg"
+                     alt="Menu Icon"
+                     width="32px">
+            </button>
+        </div>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8 text-dark-grayish-blue">
-                <a href="#"
-                   class="hover:text-soft-red">Home</a>
-                <a href="#"
-                   class="hover:text-soft-red">New</a>
-                <a href="#"
-                   class="hover:text-soft-red">Popular</a>
-                <a href="#"
-                   class="hover:text-soft-red">Trending</a>
-                <a href="#"
-                   class="hover:text-soft-red">Categories</a>
-            </nav>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8 text-dark-grayish-blue">
+            <a href="#"
+               class="hover:text-soft-red">Home</a>
+            <a href="#"
+               class="hover:text-soft-red">New</a>
+            <a href="#"
+               class="hover:text-soft-red">Popular</a>
+            <a href="#"
+               class="hover:text-soft-red">Trending</a>
+            <a href="#"
+               class="hover:text-soft-red">Categories</a>
+        </nav>
     </header>
 
-</div>
+    <main>
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 
-<main>
-    <!-- Main Content Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 mx-4 md:mx-[180px]">
+            <!-- Main Feature Article -->
+            <div class="md:col-span-2">
+                <!-- Mobile Image -->
+                <img src="./assets/images/image-web-3-mobile.jpg"
+                     alt="Web 3.0 abstract art"
+                     class="md:hidden w-full mb-6">
 
-        <!-- Main Feature Article -->
-        <div class="md:col-span-2">
-            <!-- Mobile Image -->
-            <img src="./assets/images/image-web-3-mobile.jpg"
-                 alt="Web 3.0 abstract art"
-                 class="md:hidden w-full mb-6">
+                <!-- Desktop Image -->
+                <img src="./assets/images/image-web-3-desktop.jpg"
+                     alt="Web 3.0 abstract art"
+                     class="hidden md:block w-full mb-6">
 
-            <!-- Desktop Image -->
-            <img src="./assets/images/image-web-3-desktop.jpg"
-                 alt="Web 3.0 abstract art"
-                 class="hidden md:block w-full mb-6">
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-very-dark-blue">
-                    The Bright
-                    Future of
-                    Web 3.0?
-                </h1>
-                <div>
-                    <p class="text-dark-grayish-blue mb-8">
-                        We
-                        dive
-                        into
-                        the
-                        next
-                        evolution
-                        of the
-                        web
-                        that
-                        claims
-                        to put
-                        the
-                        power
-                        of the
-                        platforms
-                        back
-                        into
-                        the
-                        hands
-                        of the
-                        people.
-                        But is
-                        it
-                        really
-                        fulfilling
-                        its
-                        promise?
-                    </p>
-                    <a href="#"
-                       class="bg-soft-red text-off-white uppercase tracking-[4px] leading-[9.6px] px-[36px] py-[12px] font-bold hover:bg-very-dark-blue hover:text-off-white">
-                        Read
-                        More
-                    </a>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-very-dark-blue">
+                        The
+                        Bright
+                        Future
+                        of Web
+                        3.0?
+                    </h1>
+                    <div>
+                        <p class="text-dark-grayish-blue mb-8">
+                            We
+                            dive
+                            into
+                            the
+                            next
+                            evolution
+                            of
+                            the
+                            web
+                            that
+                            claims
+                            to
+                            put
+                            the
+                            power
+                            of
+                            the
+                            platforms
+                            back
+                            into
+                            the
+                            hands
+                            of
+                            the
+                            people.
+                            But
+                            is
+                            it
+                            really
+                            fulfilling
+                            its
+                            promise?
+                        </p>
+                        <a href="#"
+                           class="bg-soft-red text-off-white uppercase tracking-[4px] leading-[9.6px] px-[36px] py-[12px] font-bold hover:bg-very-dark-blue hover:text-off-white">
+                            Read
+                            More
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -233,30 +239,89 @@
                     </article>
                 </div>
             </aside>
-
         </div>
-</main>
+
+        <!-- Bottom Numbered Articles -->
+        <section
+                class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Article 01 -->
+            <article
+                    class="flex gap-6">
+                <img src="./assets/images/image-retro-pcs.jpg"
+                     alt="Retro PC"
+                     class="w-24 h-auto object-cover">
+                <div>
+                    <p class="text-soft-red text-3xl font-bold">
+                        01</p>
+                    <h4 class="text-very-dark-blue font-extrabold text-lg my-2 hover:text-soft-red cursor-pointer">
+                        Reviving
+                        Retro
+                        PCs</h4>
+                    <p class="text-dark-grayish-blue">
+                        What
+                        happens
+                        when
+                        old
+                        PCs
+                        are
+                        given
+                        modern
+                        upgrades?</p>
+                </div>
+            </article>
+
+            <!-- Article 02 -->
+            <article
+                    class="flex gap-6">
+                <img src="./assets/images/image-top-laptops.jpg"
+                     alt="Laptop keyboard"
+                     class="w-24 h-auto object-cover">
+                <div>
+                    <p class="text-soft-red text-3xl font-bold">
+                        02</p>
+                    <h4 class="text-very-dark-blue font-extrabold text-lg my-2 hover:text-soft-red cursor-pointer">
+                        Top 10
+                        Laptops
+                        of
+                        2022</h4>
+                    <p class="text-dark-grayish-blue">
+                        Our
+                        best
+                        picks
+                        for
+                        various
+                        needs
+                        and
+                        budgets.</p>
+                </div>
+            </article>
+
+            <!-- Article 03 -->
+            <article
+                    class="flex gap-6">
+                <img src="./assets/images/image-gaming-growth.jpg"
+                     alt="Gaming controller"
+                     class="w-24 h-auto object-cover">
+                <div>
+                    <p class="text-soft-red text-3xl font-bold">
+                        03</p>
+                    <h4 class="text-very-dark-blue font-extrabold text-lg my-2 hover:text-soft-red cursor-pointer">
+                        The
+                        Growth
+                        of
+                        Gaming</h4>
+                    <p class="text-dark-grayish-blue">
+                        How
+                        the
+                        pandemic
+                        has
+                        sparked
+                        fresh
+                        opportunities.</p>
+                </div>
+            </article>
+        </section>
+    </main>
 </div>
-
-
-01
-Reviving Retro PCs
-What happens when old PCs are
-given modern upgrades?
-
-02
-Top 10 Laptops of 2022
-Our best picks for various
-needs and budgets.
-
-03
-The Growth of Gaming
-How the pandemic has sparked
-fresh opportunities.
-
-<!--<div class="attribution">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-  Coded by <a href="#">Your Name Here</a>.
-</div>-->
 </body>
 </html>
