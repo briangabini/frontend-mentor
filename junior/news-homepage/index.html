@@ -51,7 +51,7 @@
 </head>
 <body class="font-inter text-body bg-off-white">
 
-<div class="max-w-[1080px] mx-auto mt-8 mb-12 md:mt-[96px] md:mb-[120px] px-4 sm:px-8">
+<div class="max-w-[1144px] mx-auto mt-8 mb-12 md:mt-[96px] md:mb-[120px] px-4 sm:px-8">
     <!-- Header and Navigation -->
     <header class="flex justify-between items-center mb-8">
         <!-- Logo -->
@@ -68,7 +68,7 @@
 
         <!-- Mobile Navigation -->
         <div class="md:hidden">
-            <button id="menu-btn"
+            <button id="menu-open-btn"
                     class="cursor-pointer">
                 <img src="./assets/images/icon-menu.svg"
                      alt="Menu Icon"
@@ -90,6 +90,27 @@
                class="hover:text-soft-red">Categories</a>
         </nav>
     </header>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black/60 md:hidden">
+        <!-- Menu Panel -->
+        <div class="fixed top-0 right-0 h-full w-2/3 bg-off-white p-6">
+            <!-- Close Button -->
+            <div class="flex justify-end mb-36">
+                <button id="menu-close-btn" class="cursor-pointer">
+                    <img src="./assets/images/icon-menu-close.svg" alt="Close Menu">
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+            <nav class="flex flex-col gap-6 text-xl text-very-dark-blue">
+                <a href="#" class="hover:text-soft-red">Home</a>
+                <a href="#" class="hover:text-soft-red">New</a>
+                <a href="#" class="hover:text-soft-red">Popular</a>
+                <a href="#" class="hover:text-soft-red">Trending</a>
+                <a href="#" class="hover:text-soft-red">Categories</a>
+            </nav>
+        </div>
+    </div>
 
     <main>
         <!-- Main Content Grid -->
@@ -198,5 +219,28 @@
         </section>
     </main>
 </div>
+
+<script>
+    const menuOpenBtn = document.getElementById('menu-open-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
+    };
+
+    menuOpenBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+
+    mobileMenu.addEventListener('click', (event) => {
+        if (event.target === mobileMenu) {
+            closeMenu();
+        }
+    });
+</script>
 </body>
 </html>
