@@ -26,7 +26,7 @@ Here you can find a list of all the challenges I've tackled, organized by diffic
 ### Junior Challenges
 | Challenge Name | Live Demo | Source Code | Technologies |
 |---|---|---|---|
-| News Homepage | [Live Demo]() | [Source Code]() | HTML, CSS, Tailwind |
+| News Homepage | [Live Demo](https://brngbn-news-homepage.netlify.app/) | [Source Code](https://github.com/briangabini/frontend-mentor/tree/main/junior/news-homepage) | HTML, CSS, Tailwind |
 
 ## Tech Stack
 - HTML5
