@@ -5,14 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <style type="text/tailwindcss">
+        @theme {
+            --breakpoint-mobile: 375px;
+            --breakpoint-desktop: 1440px;
+
+            --color-soft-orange: hsl(35, 77%, 62%);
+            --color-soft-red: hsl(5, 85%, 63%);
+
+            --color-off-white: hsl(36, 100%, 99%);
+            --color-grayish-blue: hsl(233, 8%, 79%);
+            --color-dark-grayish-blue: hsl(236, 13%, 42%);
+            --color-very-dark-blue: hsl(240, 100%, 5%);
+
+            --font-inter: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 <body>
   Daniel Clifford
@@ -68,9 +82,6 @@
   experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
   100% recommend! ”
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
 </body>
 </html>
