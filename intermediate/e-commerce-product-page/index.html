@@ -50,7 +50,8 @@
     <div class="flex items-center gap-4">
 
         <!-- Mobile Menu Icon -->
-        <button>
+        <button id="menu-open-btn"
+                class="cursor-pointer lg:hidden">
             <img src="./images/icon-menu.svg"
                  alt="Menu icon"
             >
@@ -77,6 +78,33 @@
         </button>
     </div>
 </header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu"
+     class="hidden fixed inset-0 bg-black/60 md:hidden z-1">
+    <!-- Menu Panel -->
+    <div class="bg-white fixed top-0 h-full w-2/3 bg-off-white p-6 gap-8 flex flex-col">
+        <!-- Close button -->
+        <button id="menu-close-btn"
+                class="cursor-pointer">
+            <img src="./images/icon-close.svg"
+                 alt="Close Menu">
+        </button>
+
+        <nav class="flex flex-col gap-4 text-black text-base font-bold">
+            <a href=""
+               class="hover:text-orange">Collections</a>
+            <a href=""
+               class="hover:text-orange">Men</a>
+            <a href=""
+               class="hover:text-orange">Women</a>
+            <a href=""
+               class="hover:text-orange">About</a>
+            <a href=""
+               class="hover:text-orange">Contact</a>
+        </nav>
+    </div>
+</div>
 
 <!-- Main -->
 <main class="mb-4">
@@ -172,12 +200,27 @@
     </section>
 </main>
 
-<!--
-Collections
-Men
-Women
-About
-Contact
--->
+<script>
+    const menuOpenBtn = document.getElementById('menu-open-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
+    };
+
+    menuOpenBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+
+    mobileMenu.addEventListener('click', (event) => {
+        if (event.target === mobileMenu) {
+            closeMenu();
+        }
+    });
+</script>
 </body>
 </html>
