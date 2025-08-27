@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="./images/favicon-32x32.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Frontend Mentor |
+        E-commerce product
+        page</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+          rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @theme {
+            --breakpoint-mobile: 375px;
+            --breakpoint-desktop: 1440px;
+
+            /* Primary */
+            --color-orange: hsl(26, 100%, 55%);
+            --color-orange-pale: hsl(25, 100%, 94%);
+
+            /* Neutral */
+            --color-very-dark-blue: hsl(220, 13%, 13%);
+            --color-dark-grayish-blue: hsl(219, 9%, 45%);
+            --color-grayish-blue: hsl(220, 14%, 75%);
+            --color-light-grayish-blue: hsl(223, 64%, 98%);
+
+            --font-kumbh-sans: 'Kumbh Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-kumbh-sans">
+
+<!-- Header -->
+<header class="flex justify-between items-center p-6">
+    <div class="flex items-center gap-4">
+
+        <!-- Mobile Menu Icon -->
+        <button>
+            <img src="./images/icon-menu.svg"
+                 alt="Menu icon"
+            >
+        </button>
+
+        <!-- Logo -->
+        <a href="#"><img
+                src="./images/logo.svg"
+                alt="Sneaker Company logo">
+        </a>
+    </div>
+
+    <div class="flex items-center gap-6">
+        <!--Cart Icon -->
+        <button>
+            <img src="./images/icon-cart.svg"
+                 alt="Shopping cart icon"/>
+        </button>
+        <!--Avatar-->
+        <button>
+            <img src="./images/image-avatar.png"
+                 alt="User avatar"
+                 class="w-8 h-8 rounded-full border-2 border-transparent hover:border-orange"/>
+        </button>
+    </div>
+</header>
+
+<!-- Main -->
+
+<main class="mb-4">
+    <!-- Product Image Carousel -->
+    <section class="relative">
+        <img src="./images/image-product-1.jpg"
+             alt="Product image"
+             class="w-full lg:rounded-lg max-h-[296px] object-cover">
+
+        <!-- Carousel Controls -->
+        <div class="absolute top-1/2 -translate-y-1/2 inset-0 flex justify-between px-4 h-fit">
+            <!-- Previous -->
+            <button class="bg-white w-10 h-10 rounded-full flex items-center justify-center">
+                <img src="./images/icon-previous.svg"
+                     alt="Previous image icon"
+                     class="relative right-[2px]">
+            </button>
+            <!-- Next -->
+            <button class="bg-white w-10 h-10 rounded-full flex items-center justify-center">
+                <img src="./images/icon-next.svg"
+                     alt="Next image icon"
+                     class="relative left-[2px]">
+            </button>
+        </div>
+    </section>
+
+    <!-- Product Information -->
+    <section
+            class="p-6 space-y-4">
+        <!-- Company Name -->
+        <h2 class="text-dark-grayish-blue text-xs font-bold uppercase tracking-widest">
+            Sneaker Company
+        </h2>
+
+        <!-- Product Title -->
+        <h1 class="text-3xl font-bold">
+            Fall Limited
+            Edition
+            Sneakers</h1>
+
+        <!-- Product Description -->
+        <p class="text-dark-grayish-blue text-base">
+            These low-profile
+            sneakers are
+            your perfect
+            casual wear
+            companion.
+            Featuring a
+            durable rubber
+            outer sole,
+            they’ll withstand
+            everything
+            the weather can
+            offer.
+        </p>
+
+        <!-- Price Section -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <p class="font-bold text-3xl">
+                    $125.00</p>
+                <span class="bg-black text-white text-xs font-bold px-2 py-1 rounded">50%</span>
+            </div>
+            <p class="font-bold text-base text-dark-grayish-blue line-through">
+                250.00
+            </p>
+        </div>
+
+        <!-- Quantity Selector -->
+        <div class="bg-light-grayish-blue flex items-center justify-between p-4 rounded-lg">
+            <button class="hover:opacity-60">
+                <img src="./images/icon-minus.svg"
+                     alt="Decrease quantity icon">
+            </button>
+
+            <span class="font-bold text-black text-base">0</span>
+            <button class="hover:opacity-60">
+                <img src="./images/icon-plus.svg"
+                     alt="Increase quantity icon">
+            </button>
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="w-full bg-orange text-sm font-bold p-4 rounded-lg shadow-lg lg:shadow-none shadow-orange-pale flex items-center justify-center gap-4 hover:opacity-60 mb-8">
+            <svg width="22"
+                 height="20"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                      fill-rule="nonzero"/>
+            </svg>
+            Add to Cart
+        </button>
+    </section>
+</main>
+
+<!--
+Collections
+Men
+Women
+About
+Contact
+-->
+</body>
+</html>
