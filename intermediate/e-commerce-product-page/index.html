@@ -46,36 +46,84 @@
 <body class="font-kumbh-sans">
 
 <!-- Header -->
-<header class="flex justify-between items-center p-6">
+<header class="relative flex justify-between items-center p-6 border-b">
     <div class="flex items-center gap-4">
-
         <!-- Mobile Menu Icon -->
         <button id="menu-open-btn"
                 class="cursor-pointer lg:hidden">
             <img src="./images/icon-menu.svg"
-                 alt="Menu icon"
-            >
+                 alt="Menu icon">
         </button>
-
         <!-- Logo -->
         <a href="#"><img
                 src="./images/logo.svg"
-                alt="Sneaker Company logo">
-        </a>
+                alt="Sneaker Company logo"></a>
     </div>
 
     <div class="flex items-center gap-6">
-        <!--Cart Icon -->
-        <button>
+        <!-- Cart Icon -->
+        <button id="cart-btn"
+                class="relative">
+            <!-- Cart Badge -->
+            <span id="cart-badge"
+                  class="hidden absolute -top-2 -right-2 bg-orange text-white text-[10px] font-bold px-2 rounded-full"></span>
             <img src="./images/icon-cart.svg"
                  alt="Shopping cart icon"/>
         </button>
-        <!--Avatar-->
+        <!-- Avatar -->
         <button>
             <img src="./images/image-avatar.png"
                  alt="User avatar"
                  class="w-8 h-8 rounded-full border-2 border-transparent hover:border-orange"/>
         </button>
+    </div>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup"
+         class="hidden absolute top-[95%] left-0 right-0 mx-auto w-[90%] max-w sm bg-white rounded lg shadow-2xl z-20">
+        <h3 class="font-bold p-6 border-b border-light-grayish-blue">
+            Cart</h3>
+        <div class="p-6 min-h-[150px] flex items-center justify-center">
+            <!--Empty Cart Message -->
+            <p id="empty-cart-message"
+               class="text-dark-grayish-blue font-bold">
+                Your cart is
+                empty.</p>
+
+            <!-- Filled Card Content (hidden by default) -->
+            <div id="filled-cart-content"
+                 class="hidden w-full space-y-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <img src="./images/image-product-1-thumbnail.jpg"
+                             alt="product thumbnail"
+                             class="w-12 h-12 rounded">
+                        <div class="text-dark-grayish-blue">
+                            <p>
+                                Fall
+                                Limited
+                                Edition
+                                Sneakers</p>
+                            <p>
+                                $125.00
+                                x
+                                3
+                                <span id="card-quantity"></span>
+                                <span id="card-total"
+                                      class="font-bold text-very-dark-blue"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <button id="delete-item-btn">
+                        <img src="./images/icon-delete.svg"
+                             alt="Delete item icon">
+                    </button>
+                </div>
+                <button class="w-full bg-orange font-bold p-4 rounded-lg">
+                    Checkout
+                </button>
+            </div>
+        </div>
     </div>
 </header>
 
@@ -175,20 +223,24 @@
 
         <!-- Quantity Selector -->
         <div class="bg-light-grayish-blue flex items-center justify-between p-4 rounded-lg">
-            <button class="hover:opacity-60">
+            <button id="minus-btn"
+                    class="hover:opacity-60">
                 <img src="./images/icon-minus.svg"
                      alt="Decrease quantity icon">
             </button>
 
-            <span class="font-bold text-black text-base">0</span>
-            <button class="hover:opacity-60">
+            <span id="quantity-display"
+                  class="font-bold text-black text-base">0</span>
+            <button id="plus-btn"
+                    class="hover:opacity-60">
                 <img src="./images/icon-plus.svg"
                      alt="Increase quantity icon">
             </button>
         </div>
 
         <!-- Add to Cart -->
-        <button class="w-full bg-orange text-sm font-bold p-4 rounded-lg shadow-2xl lg:shadow-none shadow-orange-200 flex items-center justify-center gap-4 hover:opacity-60 mb-8">
+        <button id="add-to-cart-btn"
+                class="w-full bg-orange text-sm font-bold p-4 rounded-lg shadow-2xl lg:shadow-none shadow-orange-200 flex items-center justify-center gap-4 hover:opacity-60 mb-8">
             <svg width="22"
                  height="20"
                  xmlns="http://www.w3.org/2000/svg">
@@ -201,6 +253,7 @@
 </main>
 
 <script>
+    /* Mobile Menu */
     const menuOpenBtn = document.getElementById('menu-open-btn');
     const menuCloseBtn = document.getElementById('menu-close-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -221,6 +274,88 @@
             closeMenu();
         }
     });
+
+    /* Cart and Quantity Logic */
+    /* References */
+    const cartBtn = document.getElementById('cart-btn');
+    const cartPopup = document.getElementById('cart-popup');
+    const plusBtn = document.getElementById('plus-btn');
+    const minusBtn = document.getElementById('minus-btn');
+    const quantityDisplay = document.getElementById('quantity-display');
+    const addToCartBtn = document.getElementById('add-to-cart-btn');
+    const cartBadge = document.getElementById('cart-badge');
+    const emptyCartMsg = document.getElementById('empty-cart-msg');
+    const filledCartContent = document.getElementById('filled-cart-content');
+    const cartQuantitySpan = document.getElementById('cart-quantity');
+    const cartTotalSpan = document.getElementById('cart-total');
+    const deleteItemBtn = document.getElementById('delete-item-btn');
+
+    /* Initialize variables */
+    let quantity = 0;
+    let cartItemCount = 0;
+    const itemPrice = 125.00;
+
+    // Functions to update the UI
+    const updateQuantityDisplay = () => {
+        quantityDisplay.textContent = quantity.toString();
+    }
+
+    const updateCart = () => {
+        // Update badge visibility and count
+        if (cartItemCount > 0) {
+            cartBadge.classList.remove('hidden');
+            cartBadge.textContent = cartItemCount.toString();
+        } else {
+            cartBadge.classList.add('hidden');
+        }
+
+        // Update cart popup content
+        if (cartItemCount > 0) {
+            emptyCartMsg.classList.add('hidden');
+            filledCartContent.classList.remove('hidden');
+            cartQuantitySpan.textContent = cartItemCount.toString();
+            cartTotalSpan.textContent = `$${(itemPrice * cartItemCount).toFixed(2)}`;
+        } else {
+            emptyCartMsg.classList.remove('hidden');
+            filledCartContent.classList.add('hidden');
+        }
+    }
+
+    /* Event Listeners */
+    // Toggle cart popup visibility
+    cartBtn.addEventListener('click', () => {
+        cartPopup.classList.toggle('hidden');
+    })
+
+    // Increase and decrease quantity
+    plusBtn.addEventListener('click', () => {
+        quantity++;
+        updateQuantityDisplay();
+    })
+
+    minusBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+            quantity--;
+            updateQuantityDisplay();
+        }
+    })
+
+    // Add quantity to cart
+    addToCartBtn.addEventListener('click', () => {
+        if (quantity > 0) {
+            cartItemCount += quantity;
+            updateCart();
+            quantity = 0;
+            updateQuantityDisplay();
+        }
+    })
+
+    // Delete item from cart
+    // Note: since we only have one product, this will clear the cart, and the logic is simple
+    deleteItemBtn.addEventListener('click', () => {
+        cartItemCount = 0;      // No need to check for quantity, just clear the cart, because we only have one product
+        updateCart();
+    })
 </script>
 </body>
 </html>
